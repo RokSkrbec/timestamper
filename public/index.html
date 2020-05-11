@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/04a2ad65c9.js" crossorigin="anonymous"></script>
+    <title>Timestamper</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Timestamper</h1>
+    </nav>
+    <main>
+      <form id="add-video" class="add-video">
+        <label for="video-id">Youtube Link</label>
+        <input type="text" name="video-url" id="video-url" placeholder="e.g. https://www.youtube.com/watch?v=JU5LMG3WFBw" />
+        <button type="submit">ADD VIDEO</button>
+      </form>
+      <div class="error-message">Wrong Url, please try again.</div>
+      <div class="list-container">
+        <ul class="videos-list"></ul>
+      </div>
+    </main>
+    <footer>&copy; Rok Škrbec 2020</footer>
+  </body>
+</html>

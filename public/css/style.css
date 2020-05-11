@@ -1,0 +1,191 @@
+html {
+  font-size: 62.5%;
+  background-color: #36393f;
+  color: #fdfdfd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav {
+  background-color: #2c2f33;
+  height: 5rem;
+  line-height: 5rem;
+}
+
+nav h1 {
+  font-size: 4rem;
+  font-family: 'Lato', sans-serif;
+  margin-left: 4rem;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+main .add-video {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .add-video label {
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  margin-right: 1rem;
+}
+
+main .add-video input {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 2rem;
+  line-height: 2rem;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  margin-right: 1rem;
+  background-color: #fdfdfd;
+  color: #2c2f33;
+  width: 40rem;
+}
+
+main .add-video .input-error {
+  border: 2px solid #a63232;
+}
+
+main .add-video button {
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  padding: 0.4rem 2rem;
+  background-color: #2c2f33;
+  color: #fdfdfd;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+main .add-video button:hover {
+  background-color: #383c41;
+}
+
+main .error-message {
+  display: none;
+  width: 50%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  background-color: #a63232;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+main .show-error-message {
+  display: inline-block;
+}
+
+main .list-container {
+  margin-top: 2rem;
+  width: 50%;
+}
+
+main .list-container ul {
+  list-style: none;
+}
+
+main .list-container ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #36393f;
+}
+
+main .list-container ul li .details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .list-container ul li .details-container img {
+  width: 4.6rem;
+  margin-right: 1rem;
+}
+
+main .list-container ul li .details-container .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .list-container ul li .details-container .details .add-date {
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+main .list-container ul li .delete-video-button {
+  cursor: pointer;
+  color: #a63232;
+  font-weight: bold;
+  font-size: 3rem;
+  z-index: 999;
+}
+
+main .list-container ul li:hover {
+  background-color: #42454d;
+}
+
+main .list-container ul li:nth-child(odd) {
+  background-color: #2c2f33;
+}
+
+main .list-container ul li:nth-child(odd):hover {
+  background-color: #383c41;
+}
+
+footer {
+  background-color: #2c2f33;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  font-family: 'Lato', sans-serif;
+  color: #fdfdfd;
+}
+/*# sourceMappingURL=style.css.map */

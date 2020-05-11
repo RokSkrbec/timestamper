@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/video.js" defer></script>
+    <link rel="stylesheet" href="css/video.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/04a2ad65c9.js" crossorigin="anonymous"></script>
+    <title>Timestamper</title>
+  </head>
+  <body>
+    <nav>
+      <h1 class="title">Timestamper Video</h1>
+      <h2><a href="index.html">Home</a></h2>
+    </nav>
+    <main>
+      <div class="main-container">
+        <div id="ytplayer"></div>
+        <div class="timestamps">
+          <div class="add-timestamp">
+            <form id="timestamp-form" class="timestamp-form">
+              <input type="text" name="timestamp-text" id="timestamp-text" required />
+              <button type="submit">ADD TIMESTAMP</button>
+            </form>
+          </div>
+          <ul class="timestamps-list"></ul>
+        </div>
+      </div>
+    </main>
+    <footer>&copy; Rok Škrbec 2020</footer>
+  </body>
+</html>
