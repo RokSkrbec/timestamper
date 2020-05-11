@@ -57,7 +57,7 @@ addVideo.addEventListener('submit', (e) => {
   e.preventDefault()
   const videoUrl = document.getElementById('video-url')
   const videoId = YouTubeGetID(videoUrl.value)
-  fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDLZWBugA0PnEtYNVqvHdMU9gUi9SfqjIo&part=snippet,contentDetails,statistics,status`)
+  fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${process.env.YT_API}&part=snippet,contentDetails,statistics,status`)
     .then((res) => res.json())
     .then((data) => {
       const videoTitle = data.items[0].snippet.title
