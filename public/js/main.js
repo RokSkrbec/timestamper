@@ -3,7 +3,7 @@ window.addEventListener('load', () => displayVideos())
 
 function displayVideos() {
   videosList.innerHTML = ''
-  fetch('https://www.timestamper.rokskrbec.si/videos')
+  fetch('/videos')
     .then((res) => res.json())
     .then((data) => {
       data.forEach((element) => {
@@ -16,7 +16,7 @@ function displayVideos() {
         let month = date.substring(5, 7)
         let day = date.substring(8, 10)
         let time = date.substring(11, 19)
-        videosList.innerHTML += `<li onclick="location.href='https://www.timestamper.rokskrbec.si/video.html?id=${id}';"><div class="details-container"><img src="${thumbnailUrl}"></img><div class="details"><div class="video-title">${title}</div><div class="add-date">added on: ${day}.${month}.${year} at: ${time}</div></div></div><div onclick='deleteVideo(event, "${id}")' class="delete-video-button"><i class="fas fa-times"></i></div></li>`
+        videosList.innerHTML += `<li onclick="location.href='/video.html?id=${id}';"><div class="details-container"><img src="${thumbnailUrl}"></img><div class="details"><div class="video-title">${title}</div><div class="add-date">added on: ${day}.${month}.${year} at: ${time}</div></div></div><div onclick='deleteVideo(event, "${id}")' class="delete-video-button"><i class="fas fa-times"></i></div></li>`
       })
     })
 }
@@ -24,7 +24,7 @@ function displayVideos() {
 //------------------------- delete video -----------------------------
 function deleteVideo(event, id) {
   event.stopPropagation()
-  fetch(`https://www.timestamper.rokskrbec.si/videos/${id}`, {
+  fetch(`/videos/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ function deleteVideo(event, id) {
     })
     .catch((err) => console.log(err))
 
-  fetch(`https://www.timestamper.rokskrbec.si/timestamps/all/${id}`, {
+  fetch(`/timestamps/all/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ addVideo.addEventListener('submit', (e) => {
   e.preventDefault()
   const videoUrl = document.getElementById('video-url')
   const videoId = YouTubeGetID(videoUrl.value)
-  fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${process.env.YT_API}&part=snippet,contentDetails,statistics,status`)
+  fetch(`https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=AIzaSyDLZWBugA0PnEtYNVqvHdMU9gUi9SfqjIo&part=snippet,contentDetails,statistics,status`)
     .then((res) => res.json())
     .then((data) => {
       const videoTitle = data.items[0].snippet.title
@@ -65,7 +65,7 @@ addVideo.addEventListener('submit', (e) => {
       const thumbnailUrl = data.items[0].snippet.thumbnails.default.url
       videoUrl.classList.remove('input-error')
       errorMessage.classList.remove('show-error-message')
-      fetch('https://www.timestamper.rokskrbec.si/videos', {
+      fetch('/videos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

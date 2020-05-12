@@ -2,7 +2,7 @@ let videoId = new URLSearchParams(window.location.search).get('id')
 let youtubeId
 let videoTitle = document.querySelector('.title')
 
-fetch(`https://www.timestamper.rokskrbec.si/videos/${videoId}`)
+fetch(`/videos/${videoId}`)
   .then((res) => res.json())
   .then((data) => {
     youtubeId = data[0].youtubeId
@@ -40,7 +40,7 @@ document.getElementById('timestamp-form').addEventListener('submit', submitForm)
 function getTimestamps() {
   const timestampsArray = []
   timestampsList.innerHTML = ''
-  fetch(`https://www.timestamper.rokskrbec.si/timestamps/${videoId}`)
+  fetch(`/timestamps/${videoId}`)
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < data.length; i++) {
@@ -75,7 +75,7 @@ function submitForm(e) {
   let timestampText = document.getElementById('timestamp-text')
   let timestampTime = player.playerInfo.currentTime
 
-  fetch('https://www.timestamper.rokskrbec.si/timestamps', {
+  fetch('/timestamps', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ function submitForm(e) {
 
 //-----------------delete timestamp function-------------------------------
 function deleteTimestamp(timestampId) {
-  const dbConnection = `https://www.timestamper.rokskrbec.si/timestamps/${timestampId}`
+  const dbConnection = `/timestamps/${timestampId}`
   fetch(dbConnection, {
     method: 'DELETE',
     headers: {
